@@ -1,5 +1,6 @@
 import numpy as np
 
+#source: https://github.com/astropy/SPISEA/
 def derive_cardelli(wavelength, Rv):
         """
         Cardelli extinction law. This produces extinction values expected
@@ -69,10 +70,11 @@ def derive_cardelli(wavelength, Rv):
 
         return output
     
-    
+#Setting the wavelengts for the filters: BP, G, RP, J, H and Ks to calculate the A_lambda values
 wavelength = ( 0.518258, 0.639021, 0.782508, 1.237560, 1.647602, 2.162075 ) # in micron!
 Alambda_Av = ( 1.08337, 0.83627, 0.63439, 0.28665, 0.18082, 0.11675 ) # values provided in the CMD 3.5 output
 Alambda = derive_cardelli(wavelength,3.1)
+print("")
 print("Alambda/A_Ks values from Cardelli+1989:")
 print("GAIA [BP, G, RP]:", Alambda[0:3] )
 print("2MASS [J, H, Ks:", Alambda[3:6] )
